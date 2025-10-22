@@ -1,440 +1,168 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>First Website using bootstrap</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
-    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
-    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M.H</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: "Playfair Display", serif;
+      background-color: #f4f7f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
-    .carousel-item {
-      width: 100%;
-      height: calc(100vh );
+    .header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 30px 15px;
+      text-align: center;
+      border-radius: 0 0 15px 15px;
     }
-
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .header h1 {
+      font-weight: 700;
+      margin-bottom: 0;
     }
-
-   .my-cards .card {
-      height: 450px;
+    .header p {
+      font-size: 1.1rem;
+      margin-top: 5px;
+      font-style: italic;
+      opacity: 0.9;
     }
-
-    .my-cards .card:hover {
-      box-shadow: 1px 1px 5px;
+    .section-title {
+      border-left: 5px solid #0d6efd;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #0d6efd;
+      text-transform: uppercase;
     }
-
-    .my-cards .card img {
-      height: 60%;
-      object-fit: contain;
-
-    }
-    .my-category .card{
+    .skill-bar {
+      background-color: #ddd;
+      border-radius: 25px;
       overflow: hidden;
-      border: none !important;
+      margin-bottom: 15px;
     }
-    .my-category img{
-      border-radius: 50%;
-    }
-    
-    .my-category .card button{
-      margin:10px ;
-    }
-    .my-category .card h5{
-      padding:10px 0px;
-    }
-    .brands{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0px 10px;
-      width: 100%;
-    }
-    .brands i{
-      font-size: 30px;
-      border: 1px solid;
-      padding: 10px;
-      cursor: pointer;
-    }
-    .footer-links{
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 18px;
-      
-    }
-    .footer-links li:before{
-      content: " . ";
-    }
-    .brands i:nth-child(1) {
-      background: linear-gradient(rgb(133, 142, 146), rgb(0, 162, 255));
+    .skill-level {
+      height: 15px;
+      background-color: #0d6efd;
+      text-align: right;
+      padding-right: 7px;
       color: white;
+      font-size: 12px;
+      line-height: 15px;
     }
-       .brands i:nth-child(2) {
-      background:linear-gradient(rgb(241, 111, 111) ,rgb(234, 57, 57));
-      color: white;
-    }
-       .brands i:nth-child(3) {
-      background:linear-gradient(rgb(130, 149, 161) ,red);
-      color: white;
-    }
-       .brands i:nth-child(4) {
-      background: linear-gradient(rgb(117, 244, 117), rgb(67, 228, 67));
-      color: white;
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
+<body>
 
-<body class="bg-dark">
-  <header class="my-navbar">
-    <nav class="navbar navbar-expand-lg bg-dark position-fixed w-100 z-3" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand fs-4 fw-bold fst-italic logo" href="#">2412 E</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
-            <li class="nav-item">
-              <a class="nav-link fw-bold fs-5" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 fw-bold" href="#">About Us</a>
-            </li>
-            <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
-            <li class="nav-item">
-              <a class="nav-link fs-5 fw-bold" href="#">Shop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign Up</a>
-            </li>
-          </ul>
-          <form class="d-flex nav-search" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+  <header class="header">
+    <h1>Muhammad Hashir</h1>
+    <p>Front-End Developer & Designer</p>
   </header>
-  <main>
-    <section class="my-slider">
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="2000">
-            <img
-              src="https://images.unsplash.com/photo-1661030418924-52142661241d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              class="d-block w-100" alt="...">
+
+  <main class="container my-5">
+    <div class="row">
+
+      <!-- Left column -->
+      <div class="col-lg-4 mb-4">
+        <!-- Contact Info -->
+        <section>
+          <h2 class="section-title">Contact</h2>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong>hashirijaz140@gmail.com</li>
+            <li><strong>Phone:</strong> +1 234 567 8901</li>
+            <li><strong>Location:</strong>Baldia Town Karachi</li>
+            <li><strong>Website:</strong> <a href="#" target="_blank">www.mhsheikh.com</a></li>
+          </ul>
+        </section>
+
+        <!-- Skills -->
+        <section class="mt-5">
+          <h2 class="section-title">Skills</h2>
+          <div>
+            <div>HTML & CSS</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 90%;">90%</div>
+            </div>
+
+            <div>JavaScript</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 80%;">80%</div>
+            </div>
+
+            <div>Bootstrap</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 85%;">85%</div>
+            </div>
+
+            <div>React</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 70%;">70%</div>
+            </div>
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="https://images.unsplash.com/photo-1661030419603-1f69b322bd3d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="https://images.unsplash.com/photo-1573261821759-fdd1b36d9ca5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        </section>
       </div>
-    </section>
-    <section class="my-cards">
-      <h1 class="text-light text-center mt-2">New Arrival</h1>
-      <hr class="p-5 text-light w-75 m-auto mt-4">
-      <div class="container mt-4">
-        <div class="row ">
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://d1iv6qgcmtzm6l.cloudfront.net/products/lg_dnaHKlPx4ZBC86WRS4riBS2OrK37sfP5I0CruUYk.jpg"
-                class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Rolex</h5>
-                <p class="text-center">Rs 2000</p>
-                <div class="text-center">
-                  <a href="#" class="btn btn-primary ">Shop Now</a>
-                </div>
-              </div>
-            </div>
+
+      <!-- Right column -->
+      <div class="col-lg-8">
+        <!-- Summary -->
+        <section>
+          <h2 class="section-title">Summary</h2>
+          <p>
+            Creative and detail-oriented front-end developer with 5+ years experience
+            building responsive, user-friendly websites and web applications.
+            Skilled in HTML, CSS, JavaScript, and modern frameworks like React.
+            Passionate about creating clean code and intuitive UI.
+          </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="mt-4">
+          <h2 class="section-title">Experience</h2>
+          <div>
+            <h5>Senior Front-End Developer</h5>
+            <p><em>Tech Solutions Inc. | 2021 - Present</em></p>
+            <ul>
+              <li>Lead the development of the main client-facing app using React and Bootstrap.</li>
+              <li>Optimized website performance, improving loading times by 30%.</li>
+              <li>Mentored junior developers and conducted code reviews.</li>
+            </ul>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuuqbXy5w0HUyPZlb1QY_cdBBc5GngAL2kUw&s"
-                class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Rolex</h5>
-                <p class="text-center">Rs 2000</p>
-                <div class="text-center">
-                  <a href="#" class="btn btn-primary ">Shop Now</a>
-                </div>
-              </div>
-            </div>
+
+          <div class="mt-3">
+            <h5>Front-End Developer</h5>
+            <p><em>Creative Agency | 2017 - 2021</em></p>
+            <ul>
+              <li>Built multiple client websites using HTML5, CSS3, and JavaScript.</li>
+              <li>Worked closely with designers to implement UI/UX improvements.</li>
+              <li>Integrated third-party APIs and improved cross-browser compatibility.</li>
+            </ul>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://m.media-amazon.com/images/I/71KSLguDwNL._AC_SL1500_.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Rolex</h5>
-                <p class="text-center">Rs 2000</p>
-                <div class="text-center">
-                  <a href="#" class="btn btn-primary ">Shop Now</a>
-                </div>
-              </div>
-            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mt-4">
+          <h2 class="section-title">Education</h2>
+          <div>
+            <h5>Bachelor of Science in Computer Science</h5>
+            <p><em>University of Karachi | 2013 - 2017</em></p>
           </div>
-        </div>
+        </section>
       </div>
-      </div>
-    </section>
-    <section class="my-category">
-      <div class="container p-4">
-        <h1 class="text-center text-light my-4">Category</h1>
-        <hr class="p-5 text-light w-75 m-auto mt-4">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card text-bg-dark">
-              <img src="https://img.drz.lazcdn.com/static/pk/p/6d08d2a9b7eb06e3ebc4904f6a1ed4c7.jpg_720x720q80.jpg" class="card-img" alt="...">
-              <div class="card-img-overlay-bottom text-center">
-                <h5 class="card-title">Smart Watch</h5>
-                <button class="btn btn-outline-primary">Shop Now</button>
-              </div>
-            </div>
-          </div>
-            <div class="col-md-3">
-            <div class="card text-bg-dark">
-              <img src="https://bnwcollections.com/uploads/products/1689931560Titan%201585SL07-bnw_11zon.webp" class="card-img" alt="...">
-              <div class="card-img-overlay-bottom text-center">
-                <h5 class="card-title">Analog Watch</h5>
-                <button class="btn btn-outline-primary">Shop Now</button>
-              </div>
-            </div>
-          </div>
-            <div class="col-md-3">
-            <div class="card text-bg-dark">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GUmm_Fv8-ceVsmvf1olpHXrVdepQZ9lsUg&s" class="card-img" alt="...">
-              <div class="card-img-overlay-bottom text-center">
-                <h5 class="card-title">Digital Watch</h5>
-                <button class="btn btn-outline-primary">Shop Now</button>
-              </div>
-            </div>
-          </div>
-            <div class="col-md-3">
-            <div class="card text-bg-dark">
-              <img src="https://www.garmin.pk/images/product_gallery/1662194889_1.webp" class="card-img" alt="...">
-              <div class="card-img-overlay-bottom text-center">
-                <h5 class="card-title">Aviator Watch</h5>
-                <button class="btn btn-outline-primary">Shop Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="about-us">
-      <h1 class="text-center my-4 text-light">About Us</h1>
-      <div class="container">
-        <div class="row">
-           <hr class="p-5 text-light w-75 m-auto mt-4">
-          <div class="col-md-6">
-            <p class="text-light fst-italic text-start fs-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni, magnam perferendis recusandae, nemo quas harum sapiente adipisci qui id quis! Recusandae, voluptate laudantium! Fugiat laborum deserunt reiciendis dolorum saepe porro aperiam impedit dignissimos eius delectus in non doloremque ea, sapiente accusantium rerum nostrum. Facere tenetur ducimus tempore voluptates! Minima!</p>
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <img src="images/192-1928562_watches-png-analog-watches-watch-transparent-png-removebg-preview.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <img src="https://www.pngmart.com/files/3/Branded-Watch-PNG-Pic.png" class="img-fluid" alt="">
-          </div>
-         <div class="col-md-6">
-            <p class="text-light fst-italic text-start fs-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni, magnam perferendis recusandae, nemo quas harum sapiente adipisci qui id quis! Recusandae, voluptate laudantium! Fugiat laborum deserunt reiciendis dolorum saepe porro aperiam impedit dignissimos eius delectus in non doloremque ea, sapiente accusantium rerum nostrum. Facere tenetur ducimus tempore voluptates! Minima!</p>
-          </div>
-          
-        </div>
-      </div>
-    </section>
+
+    </div>
   </main>
-  <footer class="container-fluid bg-dark-subtle ">
-    
-    <div class="row ">
-      <div class="col-md-4">
-        <h3 class="text-center mb-5">2412E</h3>
-        <p class="text-center">A Complete Bootstrap Website...</p>
-        <h3 class="text-center mt-5">About Us</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquam numquam vel quo culpa, maiores illum pariatur delectus aspernatur quod!</p>
-      </div>
-      <div class="col-md-4 ">
-        <h3 class="text-center mb-5">Socials</h3>
-        <div class="brands fs-4 text-center">
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <h3 class="text-center mt-5">Quick Links</h3>
-        <ul class="footer-links text-dark ">
-          <li>Home</li>
-          <li>About</li>
-          <li>FAQs</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h3 class="text-center ">Our Location</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14473.985825674396!2d66.9462059883652!3d24.915152025550533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3150070bc3d4d%3A0xa6bf1f000dc6b6f0!2sAptech%20Learning%20Computer%20Education%20Baldia%20town!5e0!3m2!1sen!2s!4v1750338196791!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
+
+  <footer>
+    &copy; 2025 M.Hashir. All rights reserved.
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
-  <script>
-    let navtimeline = gsap.timeline()
-    navtimeline.from(".logo", {
-      opacity: 0,
-      y: -100,
-      duration: 1,
-    })
-    navtimeline.from("li", {
-      opacity: 0,
-      y: -30,
-      duration: 0.5,
-      stagger: 0.3
-    })
-    navtimeline.from(".nav-search", {
-      opacity: 0,
-      x: 300,
-      duration: 0.5,
-    })
 
-    gsap.from(".card", {
-      opacity: 0,
-      y: 100,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: ".card",
-        start: 500
-      }
-    })
-    gsap.from(".card img", {
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.2,
-      delay: 1,
-      scrollTrigger: {
-        trigger: ".card",
-      }
-    })
-    gsap.from(".card .btn", {
-      opacity: 0,
-      duration: 0.5,
-      x: -100,
-      stagger: 0.2,
-      delay: 1,
-      scrollTrigger: {
-        trigger: ".card ",
-      }
-    })
-
-  </script>
-
-
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="form-label">Enter Your UserName</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Enter Your Email</label>
-                  <input type="email" class="form-control">
-                </div>
-                <div class="col-md-12">
-                  <label class="form-label mt-3">Enter Your Password</label>
-                  <input type="password" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label mt-3">Enter Your Country</label>
-                  <select class="form-select">
-                    <option value="" disabled selected>Select Your Country</option>
-                    <option value="">Pakistan</option>
-                    <option value="">India</option>
-                    <option value="">Bangladesh</option>
-                  </select>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label mt-3">Enter Your City</label>
-                  <select class="form-select">
-                    <option value="" disabled selected>Select Your City</option>
-                    <option value="">Karachi</option>
-                    <option value="">Lahore</option>
-                    <option value="">Islamabad</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <label class="form-label mt-3"> Postal Code</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
