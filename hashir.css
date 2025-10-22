@@ -1,0 +1,81 @@
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 50px;
+}
+/* Hero Section Animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section a {
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+a {
+  animation: fadeInSlideUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-section p {
+  animation: fadeInSlideUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-section a {
+  animation: fadeInSlideUp 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Featured Products fade-in */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+}
+
+.card:nth-child(1) {
+  animation-delay: 1.2s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 1.8s;
+}
